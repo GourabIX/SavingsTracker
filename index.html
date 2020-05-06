@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>Savings Tracker</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <a class="navbar-brand" href="#">Savings Tracker</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="summary">
+      <div class="budgetCard">
+        <div class="budgetTotal">
+          <h4 class="text-right text-light">
+            Available Budget in December 2020:
+          </h4>
+          <h2 class="text-right text-light" id="amount">
+            + 3500
+          </h2>
+        </div>
+        <div class="text-right text-light" id="earningsTotal">
+          Earnings <span style="margin-right: 220px;"></span>+ 21500
+        </div>
+        <div class="text-right text-light" id="expensesTotal">
+          Expenses <span style="margin-right: 220px;"></span> - 18000
+        </div>
+      </div>
+    </div>
+    <div class="expenseInput">
+      <form class="form-inline">
+        <div class="form-group mr-3">
+          <select class="form-control shadow-none">
+            <option>+ Income</option>
+            <option>- Expense</option>
+          </select>
+        </div>
+        <div class="form-group mr-3">
+          <input
+            type="text"
+            class="form-control shadow-none"
+            placeholder="Expense Description"
+            style="width: 35vw;"
+          />
+        </div>
+        <div class="form-group mr-3">
+          <input
+            type="number"
+            class="form-control shadow-none"
+            placeholder="Amount"
+          />
+        </div>
+        <button type="submit" class="btn shadow-none" id="expenseSubmitter">
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </button>
+      </form>
+    </div>
+    <div class="statement">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <h3 class="text-primary text-center" id="statementHeader">
+            Your Earnings
+          </h3>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th style="width: 80%;">Income Description</th>
+                <th>Amount</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Salary</td>
+                <td class="amount">
+                  21500
+                </td>
+                <td class="amountRemover">
+                  <ion-icon name="close-circle-outline"></ion-icon>
+                </td>
+              </tr>
+              <tr>
+                <td>Blog</td>
+                <td class="amount">
+                  6100
+                </td>
+                <td class="amountRemover">
+                  <ion-icon name="close-circle-outline"></ion-icon>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <h3 class="text-danger text-center" id="statementHeader">
+            Your Expenditures
+          </h3>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th style="width: 80%;">Expense Description</th>
+                <th>Amount</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rent</td>
+                <td class="amount">
+                  8000
+                </td>
+                <td class="amountRemover">
+                  <ion-icon name="close-circle-outline"></ion-icon>
+                </td>
+              </tr>
+              <tr>
+                <td>Food</td>
+                <td class="amount">
+                  5000
+                </td>
+                <td class="amountRemover">
+                  <ion-icon name="close-circle-outline"></ion-icon>
+                </td>
+              </tr>
+              <tr>
+                <td>Travel</td>
+                <td class="amount">
+                  13500
+                </td>
+                <td class="amountRemover">
+                  <ion-icon name="close-circle-outline"></ion-icon>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- JS links -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.0.1/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
