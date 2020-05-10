@@ -30,45 +30,53 @@
     <div class="summary">
       <div class="budgetCard">
         <div class="budgetTotal">
-          <h4 class="text-right text-light">
-            Available Budget in December 2020:
+          <h4 class="text-right text-light budgetText">
+            Available Budget in <span class="month">%Month%</span>
+            <span class="year">%Year</span>:
           </h4>
-          <h2 class="text-right text-light" id="amount">
+          <h2 class="text-right text-light budgetAmount" id="amount">
             + 3500
           </h2>
         </div>
-        <div class="text-right text-light" id="earningsTotal">
-          Earnings <span style="margin-right: 220px;"></span>+ 21500
+        <div class="text-light incomeLabel">
+          <span class="text-light" style="margin-left: 50px;">Earnings</span>
+          <span class="text-light earningsTotal" style="float: right;"
+            >+ 21500</span
+          >
         </div>
-        <div class="text-right text-light" id="expensesTotal">
-          Expenses <span style="margin-right: 220px;"></span> - 18000
+        <div class="text-light expensesLabel">
+          <span class="text-light" style="margin-left: 50px;">Expenses</span>
+          <div style="float: right;">
+            <span class="text-right text-light expensesTotal">- 18000</span>
+            <span class="expensePercentage shadow rounded ml-2">21%</span>
+          </div>
         </div>
       </div>
     </div>
     <div class="expenseInput">
       <form class="form-inline">
         <div class="form-group mr-3">
-          <select class="form-control shadow-none">
-            <option>+ Income</option>
-            <option>- Expense</option>
+          <select class="form-control shadow-none amountType">
+            <option value="inc" selected>+ Income</option>
+            <option value="exp">- Expense</option>
           </select>
         </div>
         <div class="form-group mr-3">
           <input
             type="text"
-            class="form-control shadow-none"
+            class="form-control shadow-none expenseDesc"
             placeholder="Expense Description"
-            style="width: 35vw;"
+            style="width: 25vw;"
           />
         </div>
         <div class="form-group mr-3">
           <input
             type="number"
-            class="form-control shadow-none"
+            class="form-control shadow-none expenseAmount"
             placeholder="Amount"
           />
         </div>
-        <button type="submit" class="btn shadow-none" id="expenseSubmitter">
+        <button type="button" class="btn shadow-none expenseSubmitter">
           <ion-icon name="checkmark-circle"></ion-icon>
         </button>
       </form>
@@ -79,33 +87,44 @@
           <h3 class="text-primary text-center" id="statementHeader">
             Your Earnings
           </h3>
-          <table class="table table-striped">
+          <table class="table table-striped clearfix">
             <thead>
               <tr>
-                <th style="width: 80%;">Income Description</th>
-                <th>Amount</th>
-                <th>Actions</th>
+                <th style="width: 70%;">Income Description</th>
+                <th style="width: 30%;">
+                  <span style="margin-left: 120px;"></span>Amount
+                </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Salary</td>
-                <td class="amount">
-                  21500
-                </td>
-                <td class="amountRemover">
-                  <ion-icon name="close-circle-outline"></ion-icon>
-                </td>
-              </tr>
-              <tr>
-                <td>Blog</td>
-                <td class="amount">
-                  6100
-                </td>
-                <td class="amountRemover">
-                  <ion-icon name="close-circle-outline"></ion-icon>
+            <tbody class="incomeList">
+              <!-- <tr class="item clearfix" id="inc-0">
+                <td class="itemDesc">Salary</td>
+                <td>
+                  <span class="amount">21500</span>
+                  <span class="amountRemover">
+                    <button
+                      type="button"
+                      class="btn shadow-none amountRemoverBtn"
+                    >
+                      <ion-icon name="close-circle-outline"></ion-icon>
+                    </button>
+                  </span>
                 </td>
               </tr>
+              <tr class="item clearfix" id="inc-1">
+                <td class="itemDesc">Blog</td>
+                <td>
+                  <span class="amount">6500</span>
+                  <span class="amountRemover">
+                    <button
+                      type="button"
+                      class="btn shadow-none amountRemoverBtn"
+                    >
+                      <ion-icon name="close-circle-outline"></ion-icon>
+                    </button>
+                  </span>
+                </td>
+              </tr> -->
             </tbody>
           </table>
         </div>
@@ -113,42 +132,61 @@
           <h3 class="text-danger text-center" id="statementHeader">
             Your Expenditures
           </h3>
-          <table class="table table-striped">
+          <table class="table table-striped clearfix">
             <thead>
               <tr>
-                <th style="width: 80%;">Expense Description</th>
-                <th>Amount</th>
-                <th>Actions</th>
+                <th style="width: 70%;">Expense Description</th>
+                <th style="width: 30%;">
+                  <span style="margin-left: 120px;"></span>Amount
+                </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Rent</td>
-                <td class="amount">
-                  8000
-                </td>
-                <td class="amountRemover">
-                  <ion-icon name="close-circle-outline"></ion-icon>
-                </td>
-              </tr>
-              <tr>
-                <td>Food</td>
-                <td class="amount">
-                  5000
-                </td>
-                <td class="amountRemover">
-                  <ion-icon name="close-circle-outline"></ion-icon>
+            <tbody class="expensesList">
+              <!-- <tr class="item clearfix" id="exp-0">
+                <td class="itemDesc">Rent</td>
+                <td>
+                  <span class="amount">7000</span>
+                  <span class="percentage shadow-sm rounded">21%</span>
+                  <span class="amountRemover">
+                    <button
+                      type="button"
+                      class="btn shadow-none amountRemoverBtn"
+                    >
+                      <ion-icon name="close-circle-outline"></ion-icon>
+                    </button>
+                  </span>
                 </td>
               </tr>
-              <tr>
-                <td>Travel</td>
-                <td class="amount">
-                  13500
-                </td>
-                <td class="amountRemover">
-                  <ion-icon name="close-circle-outline"></ion-icon>
+              <tr class="item clearfix" id="exp-1">
+                <td class="itemDesc">Food</td>
+                <td>
+                  <span class="amount">4500</span>
+                  <span class="percentage shadow-sm rounded">21%</span>
+                  <span class="amountRemover">
+                    <button
+                      type="button"
+                      class="btn shadow-none amountRemoverBtn"
+                    >
+                      <ion-icon name="close-circle-outline"></ion-icon>
+                    </button>
+                  </span>
                 </td>
               </tr>
+              <tr class="item clearfix" id="exp-2">
+                <td class="itemDesc">Travel</td>
+                <td>
+                  <span class="amount">11500</span>
+                  <span class="percentage shadow-sm rounded">21%</span>
+                  <span class="amountRemover">
+                    <button
+                      type="button"
+                      class="btn shadow-none amountRemoverBtn"
+                    >
+                      <ion-icon name="close-circle-outline"></ion-icon>
+                    </button>
+                  </span>
+                </td>
+              </tr> -->
             </tbody>
           </table>
         </div>

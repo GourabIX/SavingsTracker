@@ -44,7 +44,7 @@ h2#amount {
   font-size: 60px;
 }
 
-#earningsTotal {
+.incomeLabel {
   margin-left: 72%;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -58,7 +58,7 @@ h2#amount {
   font-size: 23px;
 }
 
-#expensesTotal {
+.expensesLabel {
   margin-left: 72%;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -72,20 +72,38 @@ h2#amount {
   font-size: 23px;
 }
 
+.expensePercentage {
+  font-size: 12px;
+  background: rgb(255, 216, 216);
+  border-radius: 3px 3px 3px 3px;
+  padding: 5px;
+  color: rgba(252, 56, 56, 1);
+  display: inline-block;
+  transform: translateY(-5px) !important;
+  font-weight: 650;
+}
+
 .expenseInput {
   padding: 1.5%;
-  padding-left: 20%;
+  padding-left: 27%;
   background: whitesmoke;
 }
 
-#expenseSubmitter ion-icon {
+.expenseSubmitter ion-icon {
   font-size: 2em;
   color: green;
   padding-top: 5px;
 }
 
-#expenseSubmitter:active ion-icon {
-  color: royalblue;
+.expenseSubmitter:active ion-icon,
+.redExpenseSubmitter:active ion-icon {
+  color: royalblue !important;
+  transform: translateY(2px);
+}
+
+#statementHeader {
+  font-family: "Titillium Web", sans-serif;
+  margin-bottom: 22px;
 }
 
 .statement {
@@ -95,32 +113,126 @@ h2#amount {
   margin-bottom: 3%;
 }
 
-#statementHeader {
-  font-family: "Titillium Web", sans-serif;
-  margin-bottom: 22px;
+table {
+  table-layout: fixed;
+  word-wrap: break-word;
 }
 
-table thead {
-  display: none;
+.incomeList td .amount {
+  float: right;
 }
 
-td.amount {
-  text-align: right;
+.incomeList .amount {
+  color: rgb(10, 161, 116);
 }
 
-tr .amountRemover {
+.incomeList tr td .amount {
+  float: right;
+  margin-right: 0%;
+  transition: margin-right 0.4s;
+}
+
+.incomeList tr:hover td .amount {
+  float: right;
+  margin-right: 18%;
+  transition: margin-right 0.4s;
+}
+
+.incomeList tr .amountRemoverBtn {
   opacity: 0;
+  float: left;
+  position: absolute;
 }
 
-tr:hover .amountRemover {
+.incomeList tr:hover .amountRemoverBtn {
   opacity: 1;
-  transition: all 0.3s ease-in;
+  float: left;
+  transform: translate(160px, -6px);
+  transition: opacity 0.5s;
+  position: absolute;
 }
 
-td.amountRemover ion-icon {
-  font-size: 1.5em;
-  color: red;
-  margin-left: 50%;
-  margin-top: 2px;
+.expensesList tr td .amount {
+  float: right;
+  margin-right: 25%;
+  transition: margin-right 0.4s;
+}
+
+.expensesList tr:hover td .amount {
+  float: right;
+  margin-right: 41%;
+  transition: margin-right 0.4s;
+}
+
+.expensesList td .percentage {
+  font-size: 12px;
+  background: rgb(255, 216, 216);
+  border-radius: 3px 3px 3px 3px;
+  padding: 5px;
+  color: rgba(252, 56, 56, 1);
+  display: block;
+  float: left;
+  position: absolute;
+  transform: translate(158px, -2px);
+}
+
+.expensesList tr td .percentage {
+  transform: translate(158px, -2px);
+  transition: transform 0.4s;
+}
+
+.expensesList tr:hover td .percentage {
+  transform: translate(128px, -2px);
+  transition: transform 0.4s;
+}
+
+.expensesList tr .amountRemoverBtn {
+  opacity: 0;
+  float: left;
+  position: absolute;
+}
+
+.expensesList tr:hover .amountRemoverBtn {
+  opacity: 1;
+  float: left;
+  transform: translate(160px, -6px);
+  transition: opacity 0.5s;
+  position: absolute;
+}
+
+.amountRemoverBtn:active {
+  transform: translateY(2px);
+  transition: 0s !important;
+}
+
+.expensesList .amount {
+  color: rgba(237, 13, 81, 1);
+}
+
+.amountRemoverBtn ion-icon {
+  font-size: 22px;
+  color: rgba(237, 13, 81, 1);
   cursor: pointer;
+}
+
+.expensesList ion-icon {
+  color: rgba(237, 13, 81, 1) !important;
+}
+
+.incomeList ion-icon {
+  color: rgb(10, 161, 116) !important;
+}
+
+.expenseDesc:focus,
+.expenseAmount:focus,
+.amountType:focus {
+  border: 1px solid rgb(16, 179, 16);
+}
+
+.red-focus:focus {
+  border: 1px solid rgb(240, 4, 55) !important;
+}
+
+.redExpenseSubmitter ion-icon {
+  color: rgb(240, 4, 55) !important;
 }
