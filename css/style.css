@@ -6,6 +6,11 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.container {
+  max-width: 70vw;
+  max-height: 100vh;
+}
+
 nav .navbar-brand {
   font-size: 32px;
 }
@@ -28,7 +33,7 @@ nav .navbar-brand {
 }
 
 .budgetTotal {
-  margin-left: 72%;
+  margin-left: 62%;
   padding-top: 20px;
   padding-bottom: 10px;
   padding-right: 20px;
@@ -45,7 +50,7 @@ h2#amount {
 }
 
 .incomeLabel {
-  margin-left: 72%;
+  margin-left: 62%;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 20px;
@@ -59,7 +64,7 @@ h2#amount {
 }
 
 .expensesLabel {
-  margin-left: 72%;
+  margin-left: 62%;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 20px;
@@ -85,7 +90,7 @@ h2#amount {
 
 .expenseInput {
   padding: 1.5%;
-  padding-left: 27%;
+  padding-left: 17%;
   background: whitesmoke;
 }
 
@@ -147,20 +152,20 @@ table {
 .incomeList tr:hover .amountRemoverBtn {
   opacity: 1;
   float: left;
-  transform: translate(160px, -6px);
+  transform: translate(103px, -6px);
   transition: opacity 0.5s;
   position: absolute;
 }
 
 .expensesList tr td .amount {
   float: right;
-  margin-right: 25%;
+  margin-right: 36%;
   transition: margin-right 0.4s;
 }
 
 .expensesList tr:hover td .amount {
   float: right;
-  margin-right: 41%;
+  margin-right: 39%;
   transition: margin-right 0.4s;
 }
 
@@ -173,16 +178,16 @@ table {
   display: block;
   float: left;
   position: absolute;
-  transform: translate(158px, -2px);
+  transform: translate(110px, -2px);
 }
 
 .expensesList tr td .percentage {
-  transform: translate(158px, -2px);
+  transform: translate(130px, -2px);
   transition: transform 0.4s;
 }
 
 .expensesList tr:hover td .percentage {
-  transform: translate(128px, -2px);
+  transform: translate(120px, -2px);
   transition: transform 0.4s;
 }
 
@@ -195,7 +200,7 @@ table {
 .expensesList tr:hover .amountRemoverBtn {
   opacity: 1;
   float: left;
-  transform: translate(160px, -6px);
+  transform: translate(150px, -6px);
   transition: opacity 0.5s;
   position: absolute;
 }
