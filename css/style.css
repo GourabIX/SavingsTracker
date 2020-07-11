@@ -6,11 +6,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.container {
-  max-width: 70vw;
-  max-height: 100vh;
-}
-
 nav .navbar-brand {
   font-size: 32px;
 }
@@ -24,12 +19,16 @@ nav .navbar-brand {
   padding-bottom: 5%;
   padding-left: 5%;
   padding-top: 4.2%;
-  height: 45vh;
+  height: 45%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../assets/banner.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+.budgetCard {
+  margin-top: 10px;
 }
 
 .budgetTotal {
@@ -90,7 +89,7 @@ h2#amount {
 
 .expenseInput {
   padding: 1.5%;
-  padding-left: 17%;
+  padding-left: 10%;
   background: whitesmoke;
 }
 
@@ -152,7 +151,7 @@ table {
 .incomeList tr:hover .amountRemoverBtn {
   opacity: 1;
   float: left;
-  transform: translate(103px, -6px);
+  transform: translate(115px, -6px);
   transition: opacity 0.5s;
   position: absolute;
 }
@@ -165,7 +164,7 @@ table {
 
 .expensesList tr:hover td .amount {
   float: right;
-  margin-right: 39%;
+  margin-right: 41%;
   transition: margin-right 0.4s;
 }
 
@@ -182,12 +181,12 @@ table {
 }
 
 .expensesList tr td .percentage {
-  transform: translate(130px, -2px);
+  transform: translate(105px, -2px);
   transition: transform 0.4s;
 }
 
 .expensesList tr:hover td .percentage {
-  transform: translate(120px, -2px);
+  transform: translate(95px, -2px);
   transition: transform 0.4s;
 }
 
@@ -200,7 +199,7 @@ table {
 .expensesList tr:hover .amountRemoverBtn {
   opacity: 1;
   float: left;
-  transform: translate(150px, -6px);
+  transform: translate(120px, -6px);
   transition: opacity 0.5s;
   position: absolute;
 }
